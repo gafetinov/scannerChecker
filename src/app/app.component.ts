@@ -14,7 +14,6 @@ export class AppComponent {
 
   @HostListener('window:keydown', ['$event']) checkScanner(event: KeyboardEvent) {
     if (event.key === 'Enter') {
-      console.log(this.buffer.join(''));
       this.correct = this.matrixValue === this.buffer.join('');
       this.showResult = true;
     } else if (!['Shift', 'Alt'].includes(event.key)) {
