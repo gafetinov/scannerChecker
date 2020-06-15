@@ -8,7 +8,6 @@ import {Component, HostListener} from '@angular/core';
 export class AppComponent {
   title = 'scannerChecker';
   matrixValue = 'Hello, world!';
-  showResult = false;
   correct = false;
   buffer = [];
 
@@ -16,9 +15,13 @@ export class AppComponent {
     if (event.key === 'Enter') {
       this.correct = this.matrixValue === this.buffer.join('');
       this.buffer = [];
-      this.showResult = true;
+      setTimeout(() => this.removeFlash(), 300);
     } else if (!['Shift', 'Alt'].includes(event.key)) {
       this.buffer.push(event.key);
     }
+  }
+
+  private removeFlash() {
+    this.correct = false;
   }
 }
