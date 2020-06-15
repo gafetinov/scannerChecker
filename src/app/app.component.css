@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+.checker__header {
+  text-align: center;
+}
+
+.checker__matrix {
+  width: 228px;
+  margin: auto;
+}

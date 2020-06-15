@@ -1,1 +1,10 @@
-
+<section class="checker">
+  <h2 class="checker__header">Попробуйте отсканировать штрихкод</h2>
+  <img class="checker__matrix" src="assets/data-matrix.png" width="228" height="228" alt="Дата матрикс">
+  <div *ngIf="showResult">
+    <p *ngIf="correct; else incorrect">Сканер работает корректно</p>
+    <ng-template #incorrect>
+      <p>Сканер работает некорректно</p>
+    </ng-template>
+  </div>
+</section>
